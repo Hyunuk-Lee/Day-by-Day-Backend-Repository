@@ -198,6 +198,10 @@ ALADIN_TTB_KEY = env('ALADIN_TTB_KEY', default='')
 # LLM API KEY (책 감정 태깅용 - Gemini)
 LLM_API_KEY = env('GEMINI_API_KEY', default='')
 
+# ===== 외부 Kiwi 분석 서버 연동 설정 =====
+# C++ 형태소 분석 마이크로서비스 서버 주소
+KIWI_ANALYZER_URL = env('KIWI_ANALYZER_URL', default='http://localhost:8001/')
+
 # ===== 미디어 파일 저장 설정 =====
 MEDIA_URL = '/media/'
 

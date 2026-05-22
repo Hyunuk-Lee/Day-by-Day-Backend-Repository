@@ -50,55 +50,10 @@ def get_analyzer():
 
 def analyze_emotion_hybrid(text: str) -> dict:
     """
-    Kiwi 형태소 분석 + NRC/KNU 사전 + 선택적 Gemini fallback 기반 감정 분석
+    외부 Kiwi 형태소 분석 마이크로서비스를 호출하여 완성된 감정 분석 결과를 그대로 리턴합니다.
     """
-    emotion_6d = get_analyzer().analyze(text)
-    valence = _compute_valence(emotion_6d)
-    arousal = _compute_arousal(emotion_6d)
-    primary_emotion = _primary_emotion(emotion_6d)
+    return get_analyzer().analyze(text)
 
-    return {
-        **emotion_6d,
-        'valence': valence,
-        'arousal': arousal,
-        'primary_emotion': primary_emotion,
-    }
-
-
-def _compute_valence(emotions: dict) -> float:
-    positive = (emotions.get('joy', 0.0) + emotions.get('trust', 0.0)) / 2.0
-    negative = (
-        emotions.get('sadness', 0.0)
-        + emotions.get('anger', 0.0)
-        + emotions.get('fear', 0.0)
-    ) / 3.0
-    value = positive - negative
-    return round(max(-1.0, min(1.0, value)), 4)
-
-
-def _compute_arousal(emotions: dict) -> float:
-    active = (emotions.get('anger', 0.0) + emotions.get('surprise', 0.0)) / 2.0
-    calm = (emotions.get('sadness', 0.0) + emotions.get('trust', 0.0)) / 2.0
-    value = active - calm
-    return round(max(-1.0, min(1.0, value)), 4)
-
-
-def _primary_emotion(emotions: dict) -> str:
-    if not emotions:
-        return '알수없음'
-
-    label_map = {
-        'joy': '기쁨',
-        'sadness': '슬픔',
-        'anger': '분노',
-        'fear': '두려움',
-        'trust': '신뢰',
-        'surprise': '놀람',
-    }
-    key = max(label_map.keys(), key=lambda k: emotions.get(k, 0.0))
-    if emotions.get(key, 0.0) <= 0:
-        return '알수없음'
-    return label_map[key]
 
 
 def analyze_emotion_with_gemini(text: str) -> dict:
