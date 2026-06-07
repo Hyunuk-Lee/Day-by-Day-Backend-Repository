@@ -1,11 +1,11 @@
 {
   "당황": {
-    "joy": 0,
-    "sadness": 1,
-    "anger": 1,
-    "fear": 1,
-    "trust": 0,
-    "surprise": 1
+    "joy": 0.0,
+    "sadness": 0.2,
+    "anger": 0.0,
+    "fear": 0.5,
+    "trust": 0.0,
+    "surprise": 1.8
   },
   "주판": {
     "joy": 0,
@@ -304,12 +304,12 @@
     "surprise": 1
   },
   "갑자기": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 1
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.2,
+    "trust": 0.0,
+    "surprise": 1.2
   },
   "농양": {
     "joy": 0,
@@ -2296,12 +2296,12 @@
     "surprise": 0
   },
   "동의": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 1,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.2,
+    "surprise": 0.0
   },
   "합의": {
     "joy": 0,
@@ -3856,12 +3856,12 @@
     "surprise": 0
   },
   "적의": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 1,
-    "fear": 1,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 1.5,
+    "fear": 0.5,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "발목": {
     "joy": 0,
@@ -3984,12 +3984,12 @@
     "surprise": 0
   },
   "환상": {
-    "joy": 1,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 1,
-    "trust": 1,
-    "surprise": 0
+    "joy": 1.8,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 1.0
   },
   "무효 선언": {
     "joy": 0,
@@ -4224,12 +4224,12 @@
     "surprise": 0
   },
   "반감": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 1,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.2,
+    "anger": 1.5,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "골동품 수집가": {
     "joy": 0,
@@ -4320,12 +4320,12 @@
     "surprise": 0
   },
   "불안": {
-    "joy": 0,
-    "sadness": 1,
-    "anger": 1,
-    "fear": 1,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.5,
+    "anger": 0.0,
+    "fear": 1.8,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "불안해하는": {
     "joy": 0,
@@ -4712,12 +4712,12 @@
     "surprise": 0
   },
   "감사": {
-    "joy": 1,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 1,
-    "trust": 1,
-    "surprise": 0
+    "joy": 0.3,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.8,
+    "surprise": 0.0
   },
   "깨닫다": {
     "joy": 0,
@@ -6168,12 +6168,12 @@
     "surprise": 0
   },
   "위축": {
-    "joy": 0,
-    "sadness": 1,
-    "anger": 0,
-    "fear": 1,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 1.0,
+    "anger": 0.0,
+    "fear": 1.5,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "붙이다": {
     "joy": 0,
@@ -8496,12 +8496,12 @@
     "surprise": 0
   },
   "믿음": {
-    "joy": 1,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 1,
-    "surprise": 0
+    "joy": 0.2,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.5,
+    "surprise": 0.0
   },
   "믿었다": {
     "joy": 0,
@@ -8872,12 +8872,12 @@
     "surprise": 0
   },
   "어리둥절": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 1,
-    "trust": 0,
-    "surprise": 1
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.2,
+    "trust": 0.0,
+    "surprise": 1.5
   },
   "편견": {
     "joy": 0,
@@ -10088,12 +10088,12 @@
     "surprise": 1
   },
   "충격": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 1,
-    "fear": 1,
-    "trust": 0,
-    "surprise": 1
+    "joy": 0.0,
+    "sadness": 0.5,
+    "anger": 0.2,
+    "fear": 0.8,
+    "trust": 0.0,
+    "surprise": 1.8
   },
   "폭격": {
     "joy": 0,
@@ -12424,12 +12424,12 @@
     "surprise": 0
   },
   "평온": {
-    "joy": 1,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 1,
-    "surprise": 0
+    "joy": 0.8,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.5,
+    "surprise": 0.0
   },
   "열소": {
     "joy": 0,
@@ -13776,12 +13776,12 @@
     "surprise": 0
   },
   "축하": {
-    "joy": 1,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 1,
-    "surprise": 1
+    "joy": 1.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.0,
+    "surprise": 0.5
   },
   "유명 인사": {
     "joy": 1,
@@ -14584,12 +14584,12 @@
     "surprise": 0
   },
   "환호": {
-    "joy": 1,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 1,
-    "surprise": 1
+    "joy": 1.8,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.8
   },
   "쾌활한": {
     "joy": 1,
@@ -17872,12 +17872,12 @@
     "surprise": 0
   },
   "화해": {
-    "joy": 1,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 1,
-    "surprise": 0
+    "joy": 0.8,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.5,
+    "surprise": 0.0
   },
   "간결한": {
     "joy": 0,
@@ -18184,12 +18184,12 @@
     "surprise": 0
   },
   "신뢰": {
-    "joy": 1,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 1,
-    "trust": 1,
-    "surprise": 0
+    "joy": 0.2,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.8,
+    "surprise": 0.0
   },
   "자신감": {
     "joy": 1,
@@ -18664,12 +18664,12 @@
     "surprise": 0
   },
   "위로": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.3,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.5,
+    "surprise": 0.0
   },
   "콘솔": {
     "joy": 0,
@@ -20888,12 +20888,12 @@
     "surprise": 0
   },
   "위기": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.8,
+    "anger": 0.0,
+    "fear": 1.8,
+    "trust": 0.0,
+    "surprise": 0.5
   },
   "표준": {
     "joy": 0,
@@ -22104,12 +22104,12 @@
     "surprise": 0
   },
   "위험": {
-    "joy": 0,
-    "sadness": 1,
-    "anger": 0,
-    "fear": 1,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.5,
+    "anger": 0.0,
+    "fear": 2.0,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "위험한": {
     "joy": 0,
@@ -24016,12 +24016,12 @@
     "surprise": 0
   },
   "절망": {
-    "joy": 0,
-    "sadness": 1,
-    "anger": 1,
-    "fear": 1,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 2.5,
+    "anger": 0.0,
+    "fear": 1.0,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "급파": {
     "joy": 0,
@@ -25176,12 +25176,12 @@
     "surprise": 0
   },
   "실망": {
-    "joy": 0,
-    "sadness": 1,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 1.5,
+    "anger": 0.5,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "난색": {
     "joy": 0,
@@ -25464,20 +25464,20 @@
     "surprise": 0
   },
   "낙심": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 1.5,
+    "anger": 0.0,
+    "fear": 0.2,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "낙담": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 1.8,
+    "anger": 0.0,
+    "fear": 0.5,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "담화": {
     "joy": 0,
@@ -25960,12 +25960,12 @@
     "surprise": 0
   },
   "불쾌": {
-    "joy": 0,
-    "sadness": 1,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.5,
+    "anger": 1.5,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "처분": {
     "joy": 0,
@@ -26952,12 +26952,12 @@
     "surprise": 0
   },
   "의심": {
-    "joy": 0,
-    "sadness": 1,
-    "anger": 0,
-    "fear": 1,
-    "trust": 1,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.2,
+    "fear": 1.0,
+    "trust": 0.0,
+    "surprise": 0.8
   },
   "의심 없는": {
     "joy": 0,
@@ -27184,12 +27184,12 @@
     "surprise": 0
   },
   "공포": {
-    "joy": 0,
-    "sadness": 1,
-    "anger": 1,
-    "fear": 1,
-    "trust": 0,
-    "surprise": 1
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 2.0,
+    "trust": 0.0,
+    "surprise": 0.5
   },
   "끔찍하게": {
     "joy": 0,
@@ -27648,12 +27648,12 @@
     "surprise": 0
   },
   "우울": {
-    "joy": 0,
-    "sadness": 1,
-    "anger": 1,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 2.2,
+    "anger": 0.0,
+    "fear": 0.5,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "암갈색": {
     "joy": 0,
@@ -29720,12 +29720,12 @@
     "surprise": 1
   },
   "증오": {
-    "joy": 0,
-    "sadness": 1,
-    "anger": 1,
-    "fear": 1,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.5,
+    "anger": 2.0,
+    "fear": 0.5,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "악독": {
     "joy": 0,
@@ -31032,12 +31032,12 @@
     "surprise": 0
   },
   "격분": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 1,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 2.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.5
   },
   "파다": {
     "joy": 0,
@@ -31776,12 +31776,12 @@
     "surprise": 0
   },
   "수용": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.2,
+    "surprise": 0.0
   },
   "제명": {
     "joy": 0,
@@ -32600,12 +32600,12 @@
     "surprise": 0
   },
   "피곤": {
-    "joy": 0,
-    "sadness": 1,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 1.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "지방이 많은": {
     "joy": 0,
@@ -34704,12 +34704,12 @@
     "surprise": 0
   },
   "상실": {
-    "joy": 0,
-    "sadness": 1,
-    "anger": 0,
-    "fear": 1,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 2.0,
+    "anger": 0.0,
+    "fear": 0.5,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "단조 공장": {
     "joy": 0,
@@ -34744,12 +34744,12 @@
     "surprise": 0
   },
   "용서": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 1,
-    "surprise": 0
+    "joy": 0.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.5,
+    "surprise": 0.0
   },
   "잊혀진": {
     "joy": 0,
@@ -34928,12 +34928,12 @@
     "surprise": 1
   },
   "행운": {
-    "joy": 1,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 1,
-    "surprise": 1
+    "joy": 1.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.8,
+    "surprise": 0.5
   },
   "사십": {
     "joy": 0,
@@ -38760,12 +38760,12 @@
     "surprise": 0
   },
   "행복": {
-    "joy": 1,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 2.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.0,
+    "surprise": 0.0
   },
   "행복하다": {
     "joy": 1,
@@ -40368,12 +40368,12 @@
     "surprise": 0
   },
   "정직": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 1,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.5,
+    "surprise": 0.0
   },
   "꿀": {
     "joy": 0,
@@ -40464,12 +40464,12 @@
     "surprise": 0
   },
   "희망": {
-    "joy": 1,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 1,
-    "surprise": 1
+    "joy": 1.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.2,
+    "surprise": 0.0
   },
   "희망이 없는": {
     "joy": 0,
@@ -41816,12 +41816,12 @@
     "surprise": 0
   },
   "조바심": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 1.2,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "짜증난": {
     "joy": 0,
@@ -44456,12 +44456,12 @@
     "surprise": 0
   },
   "의지": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.2,
+    "surprise": 0.0
   },
   "의도적인": {
     "joy": 0,
@@ -44808,12 +44808,12 @@
     "surprise": 0
   },
   "친밀": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.8,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.5,
+    "surprise": 0.0
   },
   "친밀한": {
     "joy": 1,
@@ -44848,12 +44848,12 @@
     "surprise": 0
   },
   "위협": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 1,
-    "fear": 1,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.5,
+    "anger": 0.5,
+    "fear": 1.8,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "참을 수 없는": {
     "joy": 0,
@@ -45224,12 +45224,12 @@
     "surprise": 0
   },
   "분노": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 1,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 2.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "무지개 빛깔의": {
     "joy": 0,
@@ -45408,12 +45408,12 @@
     "surprise": 0
   },
   "짜증": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 1,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.5,
+    "anger": 1.8,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "민감한": {
     "joy": 0,
@@ -45720,12 +45720,12 @@
     "surprise": 0
   },
   "질투": {
-    "joy": 0,
-    "sadness": 1,
-    "anger": 1,
-    "fear": 1,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.2,
+    "anger": 1.2,
+    "fear": 0.2,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "청바지": {
     "joy": 0,
@@ -47216,12 +47216,12 @@
     "surprise": 0
   },
   "웃음": {
-    "joy": 1,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 1
+    "joy": 1.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.5,
+    "surprise": 0.0
   },
   "빨래": {
     "joy": 0,
@@ -49152,12 +49152,12 @@
     "surprise": 0
   },
   "사랑": {
-    "joy": 1,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 2.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.5,
+    "surprise": 0.0
   },
   "사랑 만들기": {
     "joy": 1,
@@ -51736,12 +51736,12 @@
     "surprise": 0
   },
   "미소": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 1.2,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.8,
+    "surprise": 0.0
   },
   "최소화": {
     "joy": 0,
@@ -64416,12 +64416,12 @@
     "surprise": 0
   },
   "안심": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 1,
-    "surprise": 0
+    "joy": 0.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.8,
+    "surprise": 0.0
   },
   "안심시키는": {
     "joy": 0,
@@ -65184,12 +65184,12 @@
     "surprise": 0
   },
   "상쾌": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 1.8,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.2,
+    "surprise": 0.0
   },
   "냉장하다": {
     "joy": 0,
@@ -65424,12 +65424,12 @@
     "surprise": 0
   },
   "후회": {
-    "joy": 0,
-    "sadness": 1,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 1.5,
+    "anger": 0.5,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "정기적인": {
     "joy": 0,
@@ -65752,12 +65752,12 @@
     "surprise": 0
   },
   "안도": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.8,
+    "surprise": 0.0
   },
   "종교": {
     "joy": 0,
@@ -66280,12 +66280,12 @@
     "surprise": 0
   },
   "반발": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 1,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.2,
+    "anger": 1.2,
+    "fear": 0.2,
+    "trust": 0.0,
+    "surprise": 0.5
   },
   "환매": {
     "joy": 0,
@@ -66608,12 +66608,12 @@
     "surprise": 0
   },
   "존경": {
-    "joy": 1,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 1,
-    "surprise": 0
+    "joy": 0.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.8,
+    "surprise": 0.0
   },
   "인습적 예절": {
     "joy": 0,
@@ -68680,12 +68680,12 @@
     "surprise": 0
   },
   "만족": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 1.2,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.2,
+    "surprise": 0.0
   },
   "잘": {
     "joy": 0,
@@ -72464,12 +72464,12 @@
     "surprise": 0
   },
   "고독": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 1.8,
+    "anger": 0.0,
+    "fear": 0.5,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "독주": {
     "joy": 0,
@@ -73560,12 +73560,12 @@
     "surprise": 0
   },
   "안정": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.5,
+    "surprise": 0.0
   },
   "안정적인": {
     "joy": 0,
@@ -74640,12 +74640,12 @@
     "surprise": 0
   },
   "스트레스": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.8,
+    "anger": 1.5,
+    "fear": 0.8,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "뻗기": {
     "joy": 0,
@@ -77184,12 +77184,12 @@
     "surprise": 0
   },
   "성질": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 1.5,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "템페라 화법": {
     "joy": 0,
@@ -77360,12 +77360,12 @@
     "surprise": 0
   },
   "긴장": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 1,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 1.2,
+    "trust": 0.0,
+    "surprise": 0.5
   },
   "텐트": {
     "joy": 0,
@@ -78864,12 +78864,12 @@
     "surprise": 0
   },
   "감동": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 0,
-    "surprise": 0
+    "joy": 1.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.5,
+    "surprise": 0.5
   },
   "다루기 어려운": {
     "joy": 0,
@@ -79784,12 +79784,12 @@
     "surprise": 0
   },
   "진실": {
-    "joy": 1,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 1,
-    "surprise": 0
+    "joy": 0.3,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.5,
+    "surprise": 0.0
   },
   "사실주의": {
     "joy": 0,
@@ -80904,12 +80904,12 @@
     "surprise": 0
   },
   "이해": {
-    "joy": 0,
-    "sadness": 0,
-    "anger": 0,
-    "fear": 0,
-    "trust": 1,
-    "surprise": 0
+    "joy": 0.2,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.2,
+    "surprise": 0.0
   },
   "이해했다": {
     "joy": 0,
@@ -85072,12 +85072,12 @@
     "surprise": 0
   },
   "걱정": {
-    "joy": 0,
-    "sadness": 1,
-    "anger": 0,
-    "fear": 1,
-    "trust": 0,
-    "surprise": 0
+    "joy": 0.0,
+    "sadness": 0.5,
+    "anger": 0.0,
+    "fear": 1.2,
+    "trust": 0.0,
+    "surprise": 0.0
   },
   "더 나쁜": {
     "joy": 0,
@@ -85630,5 +85630,965 @@
     "fear": 0,
     "trust": 0,
     "surprise": 0
+  },
+  "슬프": {
+    "joy": 0.0,
+    "sadness": 2.0,
+    "anger": 0.0,
+    "fear": 0.2,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "외롭": {
+    "joy": 0.0,
+    "sadness": 2.0,
+    "anger": 0.0,
+    "fear": 0.5,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "무섭": {
+    "joy": 0.0,
+    "sadness": 0.5,
+    "anger": 0.0,
+    "fear": 2.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "짜증나": {
+    "joy": 0.0,
+    "sadness": 0.5,
+    "anger": 1.8,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "행복하": {
+    "joy": 1.8,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.0,
+    "surprise": 0.0
+  },
+  "안도하": {
+    "joy": 0.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.8,
+    "surprise": 0.0
+  },
+  "고맙": {
+    "joy": 0.3,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.8,
+    "surprise": 0.0
+  },
+  "뿌듯": {
+    "joy": 1.2,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.2,
+    "surprise": 0.0
+  },
+  "현타": {
+    "joy": 0.0,
+    "sadness": 1.2,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 1.0
+  },
+  "멘붕": {
+    "joy": 0.0,
+    "sadness": 0.5,
+    "anger": 0.0,
+    "fear": 1.8,
+    "trust": 0.0,
+    "surprise": 1.2
+  },
+  "킹받": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 1.8,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "열받": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 2.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "개판": {
+    "joy": 0.0,
+    "sadness": 0.5,
+    "anger": 1.5,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "설레": {
+    "joy": 1.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.5,
+    "surprise": 1.0
+  },
+  "기쁘": {
+    "joy": 1.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.5,
+    "surprise": 0.0
+  },
+  "즐겁": {
+    "joy": 1.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.5,
+    "surprise": 0.0
+  },
+  "신나": {
+    "joy": 1.8,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.5
+  },
+  "재미": {
+    "joy": 1.2,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "좋아": {
+    "joy": 1.2,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.8,
+    "surprise": 0.0
+  },
+  "흐뭇": {
+    "joy": 1.2,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.0,
+    "surprise": 0.0
+  },
+  "감격": {
+    "joy": 1.8,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.8,
+    "surprise": 1.0
+  },
+  "다행": {
+    "joy": 1.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.5,
+    "surprise": 0.0
+  },
+  "쾌락": {
+    "joy": 1.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "보람": {
+    "joy": 1.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.5,
+    "surprise": 0.0
+  },
+  "유쾌": {
+    "joy": 1.8,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.5,
+    "surprise": 0.0
+  },
+  "통쾌": {
+    "joy": 2.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.5,
+    "surprise": 0.0
+  },
+  "반갑": {
+    "joy": 1.2,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.0,
+    "surprise": 0.0
+  },
+  "희열": {
+    "joy": 2.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.5,
+    "surprise": 0.0
+  },
+  "낙천": {
+    "joy": 1.2,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.0,
+    "surprise": 0.0
+  },
+  "포근": {
+    "joy": 1.2,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.5,
+    "surprise": 0.0
+  },
+  "따뜻": {
+    "joy": 1.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.5,
+    "surprise": 0.0
+  },
+  "든든": {
+    "joy": 0.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.5,
+    "surprise": 0.0
+  },
+  "안락": {
+    "joy": 1.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.5,
+    "surprise": 0.0
+  },
+  "친근": {
+    "joy": 0.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.2,
+    "surprise": 0.0
+  },
+  "쾌조": {
+    "joy": 1.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.0,
+    "surprise": 0.0
+  },
+  "신바람": {
+    "joy": 1.8,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.5
+  },
+  "괴롭": {
+    "joy": 0.0,
+    "sadness": 1.8,
+    "anger": 0.5,
+    "fear": 0.5,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "속상": {
+    "joy": 0.0,
+    "sadness": 1.5,
+    "anger": 0.5,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "눈물": {
+    "joy": 0.0,
+    "sadness": 1.8,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.2
+  },
+  "그리워": {
+    "joy": 0.5,
+    "sadness": 1.2,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.5,
+    "surprise": 0.0
+  },
+  "아프": {
+    "joy": 0.0,
+    "sadness": 1.5,
+    "anger": 0.0,
+    "fear": 0.5,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "지치": {
+    "joy": 0.0,
+    "sadness": 1.2,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "힘들": {
+    "joy": 0.0,
+    "sadness": 1.5,
+    "anger": 0.2,
+    "fear": 0.2,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "허무": {
+    "joy": 0.0,
+    "sadness": 1.5,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.5
+  },
+  "자책": {
+    "joy": 0.0,
+    "sadness": 1.8,
+    "anger": 0.5,
+    "fear": 0.5,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "비참": {
+    "joy": 0.0,
+    "sadness": 2.0,
+    "anger": 0.5,
+    "fear": 0.5,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "쓸쓸": {
+    "joy": 0.0,
+    "sadness": 1.8,
+    "anger": 0.0,
+    "fear": 0.2,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "애통": {
+    "joy": 0.0,
+    "sadness": 2.2,
+    "anger": 0.0,
+    "fear": 0.5,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "침울": {
+    "joy": 0.0,
+    "sadness": 1.8,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "서운": {
+    "joy": 0.0,
+    "sadness": 1.2,
+    "anger": 0.8,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "섭섭": {
+    "joy": 0.0,
+    "sadness": 1.2,
+    "anger": 0.5,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "안타까": {
+    "joy": 0.0,
+    "sadness": 1.5,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.5
+  },
+  "아쉬워": {
+    "joy": 0.2,
+    "sadness": 1.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "암담": {
+    "joy": 0.0,
+    "sadness": 2.0,
+    "anger": 0.0,
+    "fear": 1.2,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "참담": {
+    "joy": 0.0,
+    "sadness": 2.2,
+    "anger": 0.5,
+    "fear": 0.5,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "비통": {
+    "joy": 0.0,
+    "sadness": 2.2,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "눈물나": {
+    "joy": 0.0,
+    "sadness": 1.8,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.2
+  },
+  "서글프": {
+    "joy": 0.0,
+    "sadness": 1.8,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "소외": {
+    "joy": 0.0,
+    "sadness": 1.8,
+    "anger": 0.0,
+    "fear": 0.8,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "체념": {
+    "joy": 0.0,
+    "sadness": 1.5,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.2
+  },
+  "한숨": {
+    "joy": 0.0,
+    "sadness": 1.2,
+    "anger": 0.2,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "상처받": {
+    "joy": 0.0,
+    "sadness": 1.8,
+    "anger": 0.5,
+    "fear": 0.5,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "낙망": {
+    "joy": 0.0,
+    "sadness": 1.5,
+    "anger": 0.0,
+    "fear": 0.5,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "화나": {
+    "joy": 0.0,
+    "sadness": 0.2,
+    "anger": 2.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "욱하": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 1.5,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.8
+  },
+  "미워": {
+    "joy": 0.0,
+    "sadness": 0.5,
+    "anger": 1.8,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "억울": {
+    "joy": 0.0,
+    "sadness": 1.0,
+    "anger": 1.8,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "분하": {
+    "joy": 0.0,
+    "sadness": 0.5,
+    "anger": 2.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "답답": {
+    "joy": 0.0,
+    "sadness": 0.8,
+    "anger": 1.5,
+    "fear": 0.2,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "빡치": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 2.2,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "적대": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 1.5,
+    "fear": 0.5,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "원망": {
+    "joy": 0.0,
+    "sadness": 0.8,
+    "anger": 1.5,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "노하": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 1.8,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "시기": {
+    "joy": 0.0,
+    "sadness": 0.2,
+    "anger": 1.2,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "얄미": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 1.2,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "개짜증": {
+    "joy": 0.0,
+    "sadness": 0.5,
+    "anger": 2.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "빡침": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 2.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "울화": {
+    "joy": 0.0,
+    "sadness": 0.8,
+    "anger": 2.0,
+    "fear": 0.5,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "미움": {
+    "joy": 0.0,
+    "sadness": 0.5,
+    "anger": 1.5,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "적대감": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 1.8,
+    "fear": 0.5,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "성내": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 1.5,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "화나서": {
+    "joy": 0.0,
+    "sadness": 0.2,
+    "anger": 2.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "두렵": {
+    "joy": 0.0,
+    "sadness": 0.5,
+    "anger": 0.0,
+    "fear": 2.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "초조": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 1.5,
+    "trust": 0.0,
+    "surprise": 0.5
+  },
+  "떨리": {
+    "joy": 0.2,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 1.2,
+    "trust": 0.0,
+    "surprise": 0.8
+  },
+  "조마조마": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 1.5,
+    "trust": 0.0,
+    "surprise": 0.5
+  },
+  "겁나": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 1.5,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "식은땀": {
+    "joy": 0.0,
+    "sadness": 0.5,
+    "anger": 0.0,
+    "fear": 1.8,
+    "trust": 0.0,
+    "surprise": 0.5
+  },
+  "겁먹": {
+    "joy": 0.0,
+    "sadness": 0.5,
+    "anger": 0.0,
+    "fear": 1.5,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "전전긍긍": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 1.5,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "노심초사": {
+    "joy": 0.0,
+    "sadness": 0.5,
+    "anger": 0.0,
+    "fear": 1.5,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "소름": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 1.5,
+    "trust": 0.0,
+    "surprise": 1.0
+  },
+  "오싹": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 1.5,
+    "trust": 0.0,
+    "surprise": 0.8
+  },
+  "무시무시": {
+    "joy": 0.0,
+    "sadness": 0.5,
+    "anger": 0.0,
+    "fear": 2.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "끔찍": {
+    "joy": 0.0,
+    "sadness": 1.5,
+    "anger": 0.0,
+    "fear": 1.8,
+    "trust": 0.0,
+    "surprise": 0.5
+  },
+  "새파랗": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 1.5,
+    "trust": 0.0,
+    "surprise": 0.5
+  },
+  "허둥지둥": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 1.2,
+    "trust": 0.0,
+    "surprise": 0.8
+  },
+  "섬뜩": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 1.8,
+    "trust": 0.0,
+    "surprise": 0.8
+  },
+  "의리": {
+    "joy": 0.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.8,
+    "surprise": 0.0
+  },
+  "놀라": {
+    "joy": 0.2,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.2,
+    "trust": 0.0,
+    "surprise": 1.8
+  },
+  "황당": {
+    "joy": 0.0,
+    "sadness": 0.2,
+    "anger": 0.8,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 1.5
+  },
+  "신기": {
+    "joy": 1.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 1.5
+  },
+  "깜짝": {
+    "joy": 0.3,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.2,
+    "trust": 0.0,
+    "surprise": 1.8
+  },
+  "의외": {
+    "joy": 0.2,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 1.5
+  },
+  "뜻밖": {
+    "joy": 0.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 1.5
+  },
+  "낯설": {
+    "joy": 0.0,
+    "sadness": 0.2,
+    "anger": 0.0,
+    "fear": 0.5,
+    "trust": 0.0,
+    "surprise": 1.2
+  },
+  "경악": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.5,
+    "fear": 1.2,
+    "trust": 0.0,
+    "surprise": 2.0
+  },
+  "의심스럽": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.2,
+    "fear": 1.0,
+    "trust": 0.0,
+    "surprise": 0.8
+  },
+  "생소": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.2,
+    "trust": 0.0,
+    "surprise": 1.2
+  },
+  "돌발": {
+    "joy": 0.0,
+    "sadness": 0.0,
+    "anger": 0.2,
+    "fear": 0.8,
+    "trust": 0.0,
+    "surprise": 1.5
+  },
+  "ㄱㅅ": {
+    "joy": 1.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.0,
+    "surprise": 0.0
+  },
+  "ㄱㅇㄷ": {
+    "joy": 1.0,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.0,
+    "surprise": 0.0
+  },
+  "존맛": {
+    "joy": 1.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.5,
+    "surprise": 0.0
+  },
+  "존잼": {
+    "joy": 1.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.5
+  },
+  "노잼": {
+    "joy": 0.0,
+    "sadness": 1.0,
+    "anger": 0.5,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.0
+  },
+  "개이득": {
+    "joy": 1.5,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.0,
+    "surprise": 0.0
+  },
+  "존멋": {
+    "joy": 1.2,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 1.0,
+    "surprise": 0.0
+  },
+  "존귀": {
+    "joy": 1.2,
+    "sadness": 0.0,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.8,
+    "surprise": 0.0
+  },
+  "눈물광광": {
+    "joy": 0.0,
+    "sadness": 1.8,
+    "anger": 0.0,
+    "fear": 0.0,
+    "trust": 0.0,
+    "surprise": 0.2
+  },
+  "시무룩": {
+    "joy": 0.0,
+    "sadness": 1.2,
+    "anger": 0.0,
+    "fear": 0.2,
+    "trust": 0.0,
+    "surprise": 0.0
   }
 }
