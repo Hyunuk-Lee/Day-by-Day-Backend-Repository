@@ -97,6 +97,10 @@ class MusicEmotionRecommender:
             if sum(b_vec) < 0.01:
                 b_vec = build_6d_emotion_vector(raw_tags)
 
+            sum_b = sum(b_vec)
+            if sum_b > 0:
+                b_vec = [x / sum_b for x in b_vec]
+
             pure_distance = math.sqrt(sum((t_val - b) ** 2 for t_val, b in zip(target_vec, b_vec)))
             norm_euclidean = _calculate_euclidean(target_vec, b_vec, w_vec)
             cosine_dist = _calculate_cosine(target_vec, b_vec, target_norm)
@@ -154,14 +158,19 @@ class MusicEmotionRecommender:
                 final_score = item.get('score', 0.0)
     
                 # 장르 파싱 (구조에 맞춰 'genre' 또는 'tags' 사용)
-                tags = item.get('tags', '') 
-                tag_list = [g.strip().lower() for g in tags.split(',')] if tags else []
-                
+                raw_tags = item.get('tags', [])
+                if isinstance(raw_tags, str):
+                    tag_list = [g.strip().lower() for g in raw_tags.split(',')]
+                elif isinstance(raw_tags, list):
+                    tag_list = [str(g).strip().lower() for g in raw_tags]
+                else:
+                    tag_list = []
+
                 # 1. 취향 가산점/패널티 설정
                 pref_score = 0
-                if any(g in liked_categories for g in tag_list):
+                if any(g in liked_music_tags for g in tag_list):
                     pref_score = -0.1
-                elif any(g in disliked_categories for g in tag_list):
+                elif any(g in disliked_music_tags for g in tag_list):
                     pref_score = 0.1
                 
                 # 2. 최종 정렬값 반환

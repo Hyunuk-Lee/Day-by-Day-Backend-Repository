@@ -29,17 +29,21 @@ def _get_target_emotion_vector(u_vec: np.ndarray, mode: str) -> np.ndarray:
     target_vec = u_vec.copy()
     
     if mode == 'shift':
-        target_vec[1] *= 0.2  # sadness
-        target_vec[2] *= 0.2  # anger
-        target_vec[3] *= 0.2  # fear
-        
-        target_vec[0] = min(target_vec[0] + 0.5, 1.0)  # joy
-        target_vec[4] = min(target_vec[4] + 0.4, 1.0)  # trust
+        target_vec[1:4] *= 0.2  # sadness, anger, fear
+        target_vec[0] += 0.3    # joy
+        target_vec[4] += 0.2    # trust
         
     elif mode == 'amplification':
-        target_vec[0] = min((target_vec[0] + 0.2) * 1.5, 1.0)  # joy
-        target_vec[4] = min((target_vec[4] + 0.2) * 1.5, 1.0)  # trust
-        
+        target_vec[0] *= 1.5    # joy
+        target_vec[4] *= 1.5    # trust
+
+    target_vec = np.maximum(target_vec, 0)
+
+    if np.sum(target_vec) > 0:
+        target_vec = target_vec / np.sum(target_vec)
+    else:
+        target_vec = np.ones_like(target_vec) / len(target_vec)
+
     # maintain 모드일 경우 그대로
     return target_vec
 
@@ -141,7 +145,10 @@ class MovieEmotionRecommender:
             movie_id = str(movie.get('movie_id') or movie.get('tmdb_id'))      
             b_vec = [float(movie.get(k, 0.0) or 0.0) for k in ordered_keys]
             
-            if sum(b_vec) < 0.01:
+            sum_b = sum(b_vec)
+            if sum_b > 0:
+                b_vec = [x / sum_b for x in b_vec]
+            else:
                 raw_tags = movie.get('tags', [])
                 if isinstance(raw_tags, str):
                     raw_tags = raw_tags.replace("'", '"')
@@ -149,6 +156,10 @@ class MovieEmotionRecommender:
                     except: raw_tags = [raw_tags]
                 elif not isinstance(raw_tags, list): raw_tags = []
                 b_vec = build_6d_emotion_vector(raw_tags)
+
+                sum_b = sum(b_vec)
+                if sum_b > 0:
+                    b_vec = [x / sum_b for x in b_vec]
 
             pure_distance = math.sqrt(sum((t_val - b) ** 2 for t_val, b in zip(target_vec, b_vec)))
             norm_euclidean = _calculate_euclidean(target_vec, b_vec, w_vec)

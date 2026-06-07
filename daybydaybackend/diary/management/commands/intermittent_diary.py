@@ -127,14 +127,21 @@ class Command(BaseCommand):
                 # auto_now_add 가드를 우회하여 DB 과거 일자 강제 갱신 이식
                 Diary.objects.filter(id=diary.id).update(created_at=past_date)
                 
+                emo_keys = ['joy', 'sadness', 'anger', 'fear', 'trust', 'surprise']
+                raw_emo = {k: temp.get(k, 0.0) for k in emo_keys}
+                total_sum = sum(raw_emo.values())
+                
+                # 합계가 0보다 크면 정규화, 0이면 0.0으로 유지
+                norm_emo = {k: (v / total_sum) if total_sum > 0 else 0.0 for k, v in raw_emo.items()}
+                
                 # 2. 감정 레코드 생성
                 DiaryEmotion.objects.create(
                     diary=diary,
-                    joy=temp["joy"],
-                    sadness=temp["sadness"],
-                    anger=temp["anger"],
-                    fear=temp["fear"],
-                    trust=temp["trust"],
+                    joy=norm_emo["joy"],
+                    sadness=norm_emo["sadness"],
+                    anger=norm_emo["anger"],
+                    fear=norm_emo["fear"],
+                    trust=norm_emo["trust"],
                     surprise=temp["surprise"],
                     valence=temp["valence"],
                     arousal=temp["arousal"],

@@ -6,7 +6,7 @@ from .models import UserProfile
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
-        fields = ['emotion_variance']
+        fields = ['emotion_volatility']
 
 class UserSerializer(serializers.ModelSerializer):
     profile = UserProfileSerializer(source='userprofile', read_only=True)

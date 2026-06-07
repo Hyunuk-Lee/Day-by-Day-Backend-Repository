@@ -22,6 +22,13 @@ def load_music_data():
         )
         _cached_music_data = []
         for m in db_music:
+            # 벡터 추출
+            vec = [m.get(k, 0.0) or 0.0 for k in ['joy', 'sadness', 'anger', 'fear', 'trust', 'surprise']]
+            sum_v = sum(vec)
+            if sum_v > 0:
+                # 정규화된 값을 캐시에 저장
+                for i, k in enumerate(['joy', 'sadness', 'anger', 'fear', 'trust', 'surprise']):
+                    m[k] = vec[i] / sum_v
             m['track_id'] = m['id']
             _cached_music_data.append(m)
     return _cached_music_data
@@ -36,6 +43,13 @@ def load_movie_data():
         )
         _cached_movie_data = []
         for m in db_movie:
+            # 벡터 추출
+            vec = [m.get(k, 0.0) or 0.0 for k in ['joy', 'sadness', 'anger', 'fear', 'trust', 'surprise']]
+            sum_v = sum(vec)
+            if sum_v > 0:
+                # 정규화된 값을 캐시에 저장
+                for i, k in enumerate(['joy', 'sadness', 'anger', 'fear', 'trust', 'surprise']):
+                    m[k] = vec[i] / sum_v
             m['movie_id'] = m['tmdb_id']
             _cached_movie_data.append(m)
     return _cached_movie_data
@@ -101,6 +115,10 @@ def _attach_scores(instances, diary_obj, mode, is_movie=False):
                 elif not isinstance(raw_tags, list):
                     raw_tags = []
             b_vec = build_6d_emotion_vector(raw_tags)
+            
+        sum_b = sum(b_vec)
+        if sum_b > 0:
+            b_vec = [x / sum_b for x in b_vec]
             
         norm_euclidean = _calculate_euclidean(target_vec, b_vec, w_vec)
         cosine_dist = _calculate_cosine(target_vec, b_vec, target_norm)

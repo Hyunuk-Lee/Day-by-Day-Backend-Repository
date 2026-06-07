@@ -200,17 +200,21 @@ def _get_target_emotion(u_vec: np.ndarray, mode: str) -> np.ndarray:
     target_vec = u_vec.copy()
     
     if mode == 'shift':
-        target_vec[1] *= 0.2  # sadness
-        target_vec[2] *= 0.2  # anger
-        target_vec[3] *= 0.2  # fear
-        
-        target_vec[0] = min(target_vec[0] + 0.5, 1.0)  # joy
-        target_vec[4] = min(target_vec[4] + 0.4, 1.0)  # trust
+        target_vec[1:4] *= 0.2  # sadness, anger, fear
+        target_vec[0] += 0.3    # joy
+        target_vec[4] += 0.2    # trust
         
     elif mode == 'amplification':
-        target_vec[0] = min((target_vec[0] + 0.2) * 1.5, 1.0)  # joy
-        target_vec[4] = min((target_vec[4] + 0.2) * 1.5, 1.0)  # trust
-        
+        target_vec[0] *= 1.5    # joy
+        target_vec[4] *= 1.5    # trust
+
+    target_vec = np.maximum(target_vec, 0)
+
+    if np.sum(target_vec) > 0:
+        target_vec = target_vec / np.sum(target_vec)
+    else:
+        target_vec = np.ones_like(target_vec) / len(target_vec)
+
     # maintain 모드일 경우 그대로
     return target_vec
 
@@ -261,8 +265,15 @@ def get_user_weighted_emotion(user, target_datetime=None):
         return None
 
     weighted_emotion = {}
+    raw_values = []
     for field in fields:
-        # 실제로 더해진 가중치의 총합으로 나눔
-        weighted_emotion[field] = round(weighted_sum[field] / total_weight, 4)
+        val = round(weighted_sum[field] / total_weight, 4)
+        weighted_emotion[field] = val
+        raw_values.append(val)
+
+    total_sum = sum(raw_values)
+    if total_sum > 0:
+        for field in fields:
+            weighted_emotion[field] = round(weighted_emotion[field] / total_sum, 4)
         
     return weighted_emotion
