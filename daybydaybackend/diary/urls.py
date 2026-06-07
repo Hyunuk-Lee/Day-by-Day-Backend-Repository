@@ -31,5 +31,5 @@ urlpatterns = [
     # 날짜 기준 일기 검색 API
     path('<str:date>/', views.search_diary_by_date, name='search_diary_by_date'),
 
-    path('account/debug/variance/', views.debug_update_variance_view)
+    path('account/volatility/', views.update_volatility_view)
 ]

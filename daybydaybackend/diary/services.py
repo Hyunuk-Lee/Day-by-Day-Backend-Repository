@@ -187,7 +187,7 @@ def determine_auto_recommendation_mode(user, current_diary) -> str:
         stagnant_by_stats = False
         for key in neg_keys:
             mean_v, var_v = calc_mean_and_variance(neg_data[key])
-            if count >= 2 and mean_v >= 0.35 and var_v < 0.025:
+            if count >= 2 and mean_v >= 0.33 and var_v < 0.015:
                 stagnant_by_stats = True
                 break
                 
@@ -217,7 +217,7 @@ def determine_auto_recommendation_mode(user, current_diary) -> str:
         volatile_by_stats = False
         for key in neg_keys:
             mean_v, var_v = calc_mean_and_variance(neg_data[key])
-            if count >= 2 and mean_v >= 0.35 and var_v >= 0.025:
+            if count >= 2 and mean_v >= 0.33 and var_v >= 0.015:
                 volatile_by_stats = True
                 break
                 
@@ -226,26 +226,17 @@ def determine_auto_recommendation_mode(user, current_diary) -> str:
 
     # 5. 긍정 정서의 지속 및 극대화(Amplification) 판정
     else:
-        joy_data = [e.joy or 0.0 for e in emotions]
-        trust_data = [e.trust or 0.0 for e in emotions]
-
-        joy_mean, _ = calc_mean_and_variance(joy_data)
-        trust_mean, _ = calc_mean_and_variance(trust_data)
-
-        sadness_mean, _ = calc_mean_and_variance(neg_data['sadness'])
-        anger_mean, _ = calc_mean_and_variance(neg_data['anger'])
-        fear_mean, _ = calc_mean_and_variance(neg_data['fear'])
-
-        positive_mean = joy_mean + trust_mean
-        negative_mean = sadness_mean + anger_mean + fear_mean
-
-        if positive_mean >= 0.5 and positive_mean > negative_mean * 0.9:
+        joy_trust_sum = [ (e.joy or 0.0) + (e.trust or 0.0) for e in emotions]
+        jt_mean, _ = calc_mean_and_variance(joy_trust_sum)
+        
+        # 전체 감정의 50% 이상이 긍정일 때
+        if jt_mean >= 0.5:
             return 'amplification'
             
     # 6. 기본 상태
     return 'maintain'
 
-def update_user_emotion_variance(user, current_diary):
+def update_user_emotion_volatility(user, current_diary):
     """
     오늘 일기와 어제 일기의 감정 차이를 계산하여 
     유저 프로필의 정서 분산도를 지수이동평균(EMA)으로 업데이트
@@ -272,22 +263,17 @@ def update_user_emotion_variance(user, current_diary):
         return
 
     fields = ['joy', 'sadness', 'anger', 'fear', 'trust', 'surprise']
-    
-    # 두 날짜 간의 감정 차이 제곱합의 평균
     diff_squared_sum = 0.0
     for field in fields:
         curr_val = getattr(current_emotion, field, 0.0) or 0.0
         yest_val = getattr(yesterday_diary.emotion, field, 0.0) or 0.0
         diff_squared_sum += (curr_val - yest_val) ** 2
-        
-    today_variance = diff_squared_sum / len(fields)
 
-    # 지수 이동 평균(EMA)을 적용하여 DB 업데이트
-    alpha = 0.2
-    old_variance = user_profile.emotion_variance
+    today_volatility = diff_squared_sum / len(fields)
     
-    # 누적 업데이트 공식
-    user_profile.emotion_variance = (1.0 - alpha) * old_variance + alpha * today_variance
+    # EMA 적용
+    alpha = 0.2
+    old_volatility = user_profile.emotion_volatility
+    
+    user_profile.emotion_volatility = (1.0 - alpha) * old_volatility + alpha * today_volatility
     user_profile.save()
-
-

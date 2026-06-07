@@ -26,6 +26,7 @@ class EmotionAnalyzer:
         self.kiwi = Kiwi() if Kiwi is not None else None
         self.nrc_lexicon = self._load_lexicon("nrc_lexicon_ko.json")
         self.knu_lexicon = self._load_lexicon("knu_lexicon_ko.json")
+        self.custom_lexicon = self._load_lexicon("custom_lexicon_ko.json")
         self._client = None
         self._analysis_total = 0
         self._analysis_with_fallback = 0
@@ -39,13 +40,65 @@ class EmotionAnalyzer:
         unresolved = []
         matched_count = 0
 
-        for token in tokens:
-            token_scores = self._lookup_token_scores(token)
+        negations = {"안", "못", "않", "없", "말", "아니", "않다", "없다", "아니다"}
+        contrastive_conjunctions = {"지만", "으나", "는데"}
+
+        i = 0
+        n = len(tokens)
+        while i < n:
+            # 역접 어미 감지 시 이전까지의 감정 점수 70% 소멸 (합산 * 0.3)
+            if tokens[i] in contrastive_conjunctions:
+                for key in EMOTION_KEYS:
+                    scores[key] *= 0.3
+                i += 1
+                continue
+
+            token_scores = None
+            matched_len = 1
+            
+            # 1. 2-gram (Bi-gram) 복합 어구 매칭 시도
+            if i < n - 1:
+                bigram_phrase = f"{tokens[i]} {tokens[i+1]}"
+                phrase_scores = self._lookup_token_scores(bigram_phrase)
+                if self._has_signal(phrase_scores):
+                    token_scores = phrase_scores
+                    matched_len = 2
+
+            # 2. 복합 어구 매칭에 실패한 경우 단일 토큰 조회
+            if token_scores is None:
+                token_scores = self._lookup_token_scores(tokens[i])
+
+            # 3. 부정어 맥락 제어 규칙 적용
             if self._has_signal(token_scores):
-                matched_count += 1
-                self._accumulate(scores, token_scores)
+                # 감정 단어 앞/뒤로 부정어가 오는지 검사 (단일 토큰인 경우에만)
+                has_negation_after = (matched_len == 1) and (i + 1 < n) and (tokens[i+1] in negations)
+                has_negation_before = (matched_len == 1) and (i - 1 >= 0) and (tokens[i-1] in negations)
+
+                if has_negation_after or has_negation_before:
+                    # 감정 반전 규칙 적용
+                    inverted_scores = self._zero_scores()
+                    if token_scores["sadness"] > 0 or token_scores["fear"] > 0 or token_scores["anger"] > 0:
+                        max_neg = max(token_scores["sadness"], token_scores["fear"], token_scores["anger"])
+                        inverted_scores["trust"] = self._clamp_01(max_neg * 0.7)
+                    elif token_scores["joy"] > 0 or token_scores["trust"] > 0:
+                        max_pos = max(token_scores["joy"], token_scores["trust"])
+                        inverted_scores["sadness"] = self._clamp_01(max_pos * 0.7)
+                    token_scores = inverted_scores
+                    
+                    # 뒤쪽 부정어를 감정 반전에 소모한 경우, 해당 부정어 토큰은 스킵 처리
+                    if has_negation_after:
+                        matched_len = 2
+
+                matched_count += matched_len
+                
+                # 4. 문장 후반부(40%) 가중치 2.0배 보너스 수식 적용
+                multiplier = 2.0 if i >= n * 0.6 else 1.0
+                for key in EMOTION_KEYS:
+                    scores[key] += float(token_scores.get(key, 0.0)) * multiplier
             else:
-                unresolved.append(token)
+                unresolved.append(tokens[i])
+
+            i += matched_len
 
         has_dictionary_signal = self._has_signal(scores)
         fallback_scores = self._zero_scores()
@@ -54,7 +107,8 @@ class EmotionAnalyzer:
             tokens=tokens,
             matched_count=matched_count,
             unresolved=unresolved,
-            has_dictionary_signal=has_dictionary_signal
+            has_dictionary_signal=has_dictionary_signal,
+            total_score=sum(scores.values())
         )
         coverage = matched_count / len(tokens) if tokens else 0.0
 
@@ -97,6 +151,12 @@ class EmotionAnalyzer:
 
             if not word:
                 continue
+                
+            # 커스텀 사전에 직접 등록된 감정 표현(이모지, 자음 등)은 품사 태깅에 상관없이 무조건 통과
+            if hasattr(self, 'custom_lexicon') and word in self.custom_lexicon:
+                filtered.append(word)
+                continue
+
             if self._is_filtered_pos(tag):
                 continue
             if self._is_meaningless_token(word):
@@ -122,6 +182,12 @@ class EmotionAnalyzer:
 
     def _is_meaningless_token(self, token: str) -> bool:
         if len(token) <= 1:
+            negations = {"안", "못", "않", "없", "말", "아니"}
+            is_custom = hasattr(self, 'custom_lexicon') and token in self.custom_lexicon
+            is_nrc = hasattr(self, 'nrc_lexicon') and token in self.nrc_lexicon
+            is_knu = hasattr(self, 'knu_lexicon') and token in self.knu_lexicon
+            if token in negations or is_custom or is_nrc or is_knu:
+                return False
             return True
         if re.fullmatch(r"[\d\W_]+", token):
             return True
@@ -134,6 +200,18 @@ class EmotionAnalyzer:
 
     def _lookup_token_scores(self, token: str) -> dict:
         scores = self._zero_scores()
+        
+        # 1. 커스텀 사전 우선 조회
+        if hasattr(self, 'custom_lexicon'):
+            custom_score = self.custom_lexicon.get(token)
+            if custom_score:
+                self._accumulate(scores, custom_score)
+                # 커스텀 사전에 명시된 특수 감정 토큰은 바로 3배 증폭 적용
+                for key in EMOTION_KEYS:
+                    scores[key] *= 3.0
+                return scores
+
+        # 2. 기존 NRC, KNU 사전 조회
         nrc = self.nrc_lexicon.get(token)
         knu = self.knu_lexicon.get(token)
 
@@ -141,6 +219,20 @@ class EmotionAnalyzer:
             self._accumulate(scores, nrc)
         if knu:
             self._accumulate(scores, knu)
+
+        # 3. 핵심 감정 단어 가중치 3배 증폭 적용
+        strong_words = {
+            "슬프", "우울", "행복", "기쁘", "화나", "빡치", "무섭", "불안", 
+            "걱정", "사랑", "감사", "짜증", "킹받", "고맙", "서운", "억울"
+        }
+        is_strong = False
+        for sw in strong_words:
+            if sw in token:
+                is_strong = True
+                break
+        if is_strong:
+            for key in EMOTION_KEYS:
+                scores[key] *= 3.0
 
         return scores
 
@@ -157,7 +249,7 @@ class EmotionAnalyzer:
         current_count = cache.get(cache_key, 0)
         cache.set(cache_key, current_count + 1, timeout=86400) # 24시간 동안 유효
 
-    def _should_call_gemini(self, text: str, tokens: list[str], matched_count: int, unresolved: list[str], has_dictionary_signal: bool) -> bool:
+    def _should_call_gemini(self, text: str, tokens: list[str], matched_count: int, unresolved: list[str], has_dictionary_signal: bool, total_score: float = 0.0) -> bool:
         # 1차 방어막: 공백 제외 15자 미만의 너무 짧은 일기 차단
         clean_text = text.replace(" ", "").strip()
         if len(clean_text) < 15:
@@ -174,8 +266,14 @@ class EmotionAnalyzer:
             logger.warning("emotion-analysis | [WARNING] Gemini 호출 차단: 일일 API 쿼터 한도 초과!")
             return False
 
-        # 사전 기반 분석에서 매칭된 감정 신호가 전혀 없고, 유효한 명사/동사/형사 분석 대상이 남아있을 때 백업 활성화
-        return not has_dictionary_signal and bool(tokens)
+        # 사전 기반 분석에서 매칭된 감정 신호가 전혀 없는 경우 백업 활성화
+        if not has_dictionary_signal:
+            return bool(tokens)
+
+        # 4차 방어막 (하이브리드 임계치): 
+        # 사전 합산 점수가 2.5 미만(신뢰도 낮음)이거나 단어 매칭 커버리지가 40% 미만일 때 Gemini Fallback 작동
+        coverage = matched_count / len(tokens) if tokens else 0.0
+        return total_score < 2.5 or coverage < 0.40
 
     def _analyze_unresolved_with_gemini(self, text: str, unresolved: list[str]) -> dict:
         api_key = getattr(settings, "GEMINI_API_KEY", "")
