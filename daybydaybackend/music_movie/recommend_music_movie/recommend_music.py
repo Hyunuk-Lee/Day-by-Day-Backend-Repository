@@ -148,28 +148,35 @@ class MusicEmotionRecommender:
                         has_effective_preferred_music = True
                         break
 
-            # 💡 [books 방식 통일] 완전 배제 대신 패널티 부여!
+            # [핵심 수정: 타입 안전장치 및 변수명 통일]
             def get_preference_rank(item):
                 final_score = item.get('score', 0.0)
-    
-                # [수정] tags가 리스트인지 문자열인지 안전하게 파싱
+                
+                # tags 안전 파싱 (문자열이든 리스트든 안전하게 처리)
                 tags = item.get('tags', []) 
                 if isinstance(tags, str):
-                    tag_list = [g.strip().lower() for g in tags.split(',') if g.strip()]
-                elif isinstance(tags, list):
+                    try:
+                        tags = json.loads(tags.replace("'", '"'))
+                    except:
+                        tags = [g.strip() for g in tags.split(',') if g.strip()]
+                
+                if isinstance(tags, list):
                     tag_list = [str(g).strip().lower() for g in tags]
                 else:
                     tag_list = []
                 
-                # 1. 취향 가산점/패널티 설정
-                # [수정] liked_categories -> liked_music_tags 변수명 통일
                 pref_score = 0
-                if any(g in liked_music_tags for g in tag_list):
-                    pref_score = -0.1
-                elif any(g in disliked_music_tags for g in tag_list):
+                pure_dist = item.get('pure_distance', 9.9)
+                
+                # 거리가 가까운 (치료범위 내) 콘텐츠에만 가중치 적용
+                if pure_dist <= therapeutic_threshold:
+                    if any(g in liked_music_tags for g in tag_list):
+                        pref_score = -0.1
+                
+                # 싫어하는 태그는 거리 무관하게 페널티
+                if any(g in disliked_music_tags for g in tag_list):
                     pref_score = 0.1
                 
-                # 2. 최종 정렬값 반환
                 return final_score + pref_score
 
             safe_pool.sort(key=get_preference_rank)

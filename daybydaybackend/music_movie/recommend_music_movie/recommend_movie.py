@@ -92,17 +92,21 @@ class MovieEmotionRecommender:
 
             movie_type = ContentType.objects.get_for_model(Movie)
 
-            # 좋아요 영화 장르 수집
+            # 좋아요 영화 장르 수집 (안전한 파싱)
             liked_ids = UserFeedback.objects.filter(
                 user=user, feedback_type='LIKE', content_type=movie_type
             ).values_list('object_id', flat=True)
             if liked_ids:
                 for m in Movie.objects.filter(tmdb_id__in=liked_ids):
-                    if getattr(m, 'genre', None):
-                        for g in m.genre.split(','):
+                    raw_genre = getattr(m, 'genre', None)
+                    if isinstance(raw_genre, str):
+                        for g in raw_genre.split(','):
                             liked_movie_genres.add(g.strip().lower())
+                    elif isinstance(raw_genre, list):
+                        for g in raw_genre:
+                            liked_movie_genres.add(str(g).strip().lower())
 
-            # 싫어요 누른 특정 영화 ID 및 최근 3일 기피 장르 수집
+            # 싫어요 누른 특정 영화 ID 및 최근 3일 기피 장르 수집 (안전한 파싱)
             disliked_ids = list(UserFeedback.objects.filter(
                 user=user, feedback_type='DISLIKE', content_type=movie_type
             ).values_list('object_id', flat=True))
@@ -114,9 +118,13 @@ class MovieEmotionRecommender:
             ).values_list('object_id', flat=True)
             if recent_disliked_ids:
                 for m in Movie.objects.filter(tmdb_id__in=recent_disliked_ids):
-                    if getattr(m, 'genre', None):
-                        for g in m.genre.split(','):
+                    raw_genre = getattr(m, 'genre', None)
+                    if isinstance(raw_genre, str):
+                        for g in raw_genre.split(','):
                             disliked_movie_genres.add(g.strip().lower())
+                    elif isinstance(raw_genre, list):
+                        for g in raw_genre:
+                            disliked_movie_genres.add(str(g).strip().lower())
 
         ordered_keys = ['joy', 'sadness', 'anger', 'fear', 'trust', 'surprise']
         u_vec = [float(user_emotion.get(key, 0.0)) for key in ordered_keys]
@@ -192,20 +200,33 @@ class MovieEmotionRecommender:
             has_effective_preferred_movie = False
 
             for item in safe_pool:
-                genres = item.get('genre', '')
+                genres = item.get('genre', [])
                 pure_dist = item.get('pure_distance', 9.9)
-                if genres:
-                    genre_list = [g.strip().lower() for g in genres.split(',')]
-                    if any(g in liked_movie_genres for g in genre_list):
-                        if pure_dist <= therapeutic_threshold:
-                            has_effective_preferred_movie = True
-                            break
+                
+                # 안전한 파싱
+                if isinstance(genres, str):
+                    genre_list = [g.strip().lower() for g in genres.split(',') if g.strip()]
+                elif isinstance(genres, list):
+                    genre_list = [str(g).strip().lower() for g in genres]
+                else:
+                    genre_list = []
+
+                if any(g in liked_movie_genres for g in genre_list):
+                    if pure_dist <= therapeutic_threshold:
+                        has_effective_preferred_movie = True
+                        break
 
             def get_preference_rank(item):
                 final_score = item.get('score', 0.0)
 
-                genres = item.get('genre', '') 
-                genre_list = [g.strip().lower() for g in genres.split(',')] if genres else []
+                # 안전한 파싱
+                genres = item.get('genre', []) 
+                if isinstance(genres, str):
+                    genre_list = [g.strip().lower() for g in genres.split(',') if g.strip()]
+                elif isinstance(genres, list):
+                    genre_list = [str(g).strip().lower() for g in genres]
+                else:
+                    genre_list = []
                 
                 # 1. 취향 가산점/패널티 설정
                 pref_score = 0
